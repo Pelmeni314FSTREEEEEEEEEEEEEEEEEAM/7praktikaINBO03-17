@@ -1,0 +1,45 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+class Cat
+{
+protected:
+	 int cost1;
+public:
+	Cat() { cost1 = 200; }
+};
+
+class Dog
+{
+protected:
+	int cost2;
+public:
+	Dog() { cost2 = 300; }
+};
+
+class Parrot
+{
+protected:
+	int cost3;
+public:
+	Parrot() { cost3 = 2000; }
+};
+
+struct Animal : public Cat, public Dog, public Parrot
+{
+	void showcost()
+	{
+		printf("Цена кошки: %i\nЦена собаки: %i\nЦена попугая: %i\n", cost1, cost2, cost3);
+	}
+	~Animal(){}
+};
+
+int main()
+{
+	setlocale(0, "");
+	Animal i;
+	i.showcost();
+	system("pause");
+	return 0;
+}
